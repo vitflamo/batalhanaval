@@ -435,19 +435,19 @@ public class IArrr {
                                             posia[posx+1][posy]= escuna + " " + iae;
                                         } 
                                     }
-                                iae = iae-1;
-                                posok = 1;
+                                    iae = iae-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 1 && posx>=1){
                                 if(posia[posx][posy]==agua && posia[posx-1][posy]==agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = escuna + " " + iae;
-                                        posia[posx-1][posy]= escuna + " " + iae;
-                                    } 
-                                }
-                                iae = iae-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = escuna + " " + iae;
+                                            posia[posx-1][posy]= escuna + " " + iae;
+                                        } 
+                                    }
+                                    iae = iae-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 2 && posy >=1){
                                 if(posia[posx][posy]==agua && posia[posx][posy-1]==agua){
@@ -501,53 +501,53 @@ public class IArrr {
 
                             if(direcao == 0 && posx <=7){
                                 if(posia[posx][posy]==agua && posia[posx+1][posy]==agua && posia[posx+2][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = fragata + " " + iaf;
-                                        posia[posx+1][posy]= fragata + " " + iaf;
-                                        posia[posx+2][posy]= fragata + " " + iaf;
-                                    } 
-                                }
-                                iaf = iaf-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = fragata + " " + iaf;
+                                            posia[posx+1][posy]= fragata + " " + iaf;
+                                            posia[posx+2][posy]= fragata + " " + iaf;
+                                        } 
+                                    }
+                                    iaf = iaf-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 1 && posx >=2){ 
                                 if(posia[posx][posy]==agua && posia[posx-1][posy]==agua && posia[posx-2][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = fragata + " " + iaf;
-                                        posia[posx-1][posy]= fragata + " " + iaf;
-                                        posia[posx-2][posy]= fragata + " " + iaf;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = fragata + " " + iaf;
+                                            posia[posx-1][posy]= fragata + " " + iaf;
+                                            posia[posx-2][posy]= fragata + " " + iaf;
 
-                                    } 
-                                }
-                                iaf = iaf-1;
-                                posok = 1;
+                                        } 
+                                    }
+                                    iaf = iaf-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 2 && posy >=2){ 
                                 if(posia[posx][posy]==agua && posia[posx][posy-1]==agua && posia[posx][posy-2] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = fragata + " " + iaf;
-                                        posia[posx][posy-1]= fragata + " " + iaf;
-                                        posia[posx][posy-2]= fragata + " " + iaf;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = fragata + " " + iaf;
+                                            posia[posx][posy-1]= fragata + " " + iaf;
+                                            posia[posx][posy-2]= fragata + " " + iaf;
 
-                                    } 
-                                }
-                                iaf = iaf-1;
-                                posok = 1;
+                                        } 
+                                    }
+                                    iaf = iaf-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 3 && posy <=7){ 
                                 if(posia[posx][posy]==agua && posia[posx][posy+1]==agua && posia[posx][posy+2] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = fragata + " " + iaf;
-                                        posia[posx][posy+1]= fragata + " " + iaf;
-                                        posia[posx][posy+2]= fragata + " " + iaf;
-                                    } 
-                                }
-                                iaf = iaf-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = fragata + " " + iaf;
+                                            posia[posx][posy+1]= fragata + " " + iaf;
+                                            posia[posx][posy+2]= fragata + " " + iaf;
+                                        } 
+                                    }
+                                    iaf = iaf-1;
+                                    posok = 1;
                                 }
                             }
                             
@@ -578,57 +578,57 @@ public class IArrr {
 
                             if(direcao == 0 && posx <=6){ 
                                 if(posia[posx][posy]==agua && posia[posx+1][posy]==agua && posia[posx+2][posy] == agua && posia[posx+3][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = brigue + " " + iab;
-                                        posia[posx+1][posy]= brigue + " " + iab;
-                                        posia[posx+2][posy]= brigue + " " + iab;
-                                        posia[posx+3][posy]= brigue + " " + iab;
-                                    } 
-                                }
-                                iab = iab-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = brigue + " " + iab;
+                                            posia[posx+1][posy]= brigue + " " + iab;
+                                            posia[posx+2][posy]= brigue + " " + iab;
+                                            posia[posx+3][posy]= brigue + " " + iab;
+                                        } 
+                                    }
+                                    iab = iab-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 1 && posx >= 3){ 
                                 if(posia[posx][posy]==agua && posia[posx-1][posy]==agua && posia[posx-2][posy] == agua && posia[posx-3][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = brigue + " " + iab;
-                                        posia[posx-1][posy]= brigue + " " + iab;
-                                        posia[posx-2][posy]= brigue + " " + iab;
-                                        posia[posx-3][posy]= brigue + " " + iab;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = brigue + " " + iab;
+                                            posia[posx-1][posy]= brigue + " " + iab;
+                                            posia[posx-2][posy]= brigue + " " + iab;
+                                            posia[posx-3][posy]= brigue + " " + iab;
 
-                                    } 
-                                }
-                                iab = iab-1;
-                                posok = 1;
+                                        } 
+                                    }
+                                    iab = iab-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 2 && posy >= 3){ 
                                 if(posia[posx][posy]==agua && posia[posx][posy-1]==agua && posia[posx][posy-2] == agua && posia[posx][posy-3] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = brigue + " " + iab;
-                                        posia[posx][posy-1]= brigue + " " + iab;
-                                        posia[posx][posy-2]= brigue + " " + iab;
-                                        posia[posx][posy-3]= brigue + " " + iab;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = brigue + " " + iab;
+                                            posia[posx][posy-1]= brigue + " " + iab;
+                                            posia[posx][posy-2]= brigue + " " + iab;
+                                            posia[posx][posy-3]= brigue + " " + iab;
 
-                                    } 
-                                }
-                                iab = iab-1;
-                                posok = 1;
+                                        } 
+                                    }
+                                    iab = iab-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 3 && posy <=6){ 
                                 if(posia[posx][posy]==agua && posia[posx][posy+1]==agua && posia[posx][posy+2] == agua && posia[posx][posy+3] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = brigue + " " + iab;
-                                        posia[posx][posy+1]= brigue + " " + iab;
-                                        posia[posx][posy+2]= brigue + " " + iab;
-                                        posia[posx][posy+3]= brigue + " " + iab;
-                                    } 
-                                }
-                                iab = iab-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = brigue + " " + iab;
+                                            posia[posx][posy+1]= brigue + " " + iab;
+                                            posia[posx][posy+2]= brigue + " " + iab;
+                                            posia[posx][posy+3]= brigue + " " + iab;
+                                        } 
+                                    }
+                                    iab = iab-1;
+                                    posok = 1;
                                 }
                             }
                             
@@ -658,59 +658,59 @@ public class IArrr {
 
                             if(direcao == 0 && posx <=5){ 
                                 if(posia[posx][posy]==agua && posia[posx+1][posy]==agua && posia[posx+2][posy] == agua && posia[posx+3][posy] == agua && posia[posx+4][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = mow + " " + iam;
-                                        posia[posx+1][posy]= mow + " " + iam;
-                                        posia[posx+2][posy]= mow + " " + iam;
-                                        posia[posx+3][posy]= mow + " " + iam;
-                                        posia[posx+4][posy]= mow + " " + iam;
-                                    } 
-                                }
-                                iam = iam-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = mow + " " + iam;
+                                            posia[posx+1][posy]= mow + " " + iam;
+                                            posia[posx+2][posy]= mow + " " + iam;
+                                            posia[posx+3][posy]= mow + " " + iam;
+                                            posia[posx+4][posy]= mow + " " + iam;
+                                        } 
+                                    }
+                                    iam = iam-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 1 && posx >= 4){ 
                                 if(posia[posx][posy]==agua && posia[posx-1][posy]==agua && posia[posx-2][posy] == agua && posia[posx-3][posy] == agua && posia[posx-4][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = mow + " " + iam;
-                                        posia[posx-1][posy]= mow + " " + iam;
-                                        posia[posx-2][posy]= mow + " " + iam;
-                                        posia[posx-3][posy]= mow + " " + iam;
-                                        posia[posx-4][posy]= mow + " " + iam;
-                                    } 
-                                }
-                                iam = iam-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = mow + " " + iam;
+                                            posia[posx-1][posy]= mow + " " + iam;
+                                            posia[posx-2][posy]= mow + " " + iam;
+                                            posia[posx-3][posy]= mow + " " + iam;
+                                            posia[posx-4][posy]= mow + " " + iam;
+                                        } 
+                                    }
+                                    iam = iam-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 2 && posy >= 4){ 
                                 if(posia[posx][posy]==agua && posia[posx][posy-1]==agua && posia[posx][posy-2] == agua && posia[posx][posy-3] == agua && posia[posx][posy-4] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = mow + " " + iam;
-                                        posia[posx][posy-1]= mow + " " + iam;
-                                        posia[posx][posy-2]= mow + " " + iam;
-                                        posia[posx][posy-3]= mow + " " + iam;
-                                        posia[posx][posy-4]= mow + " " + iam;
-                                    } 
-                                }
-                                iam = iam-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = mow + " " + iam;
+                                            posia[posx][posy-1]= mow + " " + iam;
+                                            posia[posx][posy-2]= mow + " " + iam;
+                                            posia[posx][posy-3]= mow + " " + iam;
+                                            posia[posx][posy-4]= mow + " " + iam;
+                                        } 
+                                    }
+                                    iam = iam-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 3 && posy <=5){ 
                                 if(posia[posx][posy]==agua && posia[posx][posy+1]==agua && posia[posx][posy+2] == agua && posia[posx][posy+3] == agua && posia[posx][posy+4] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        posia[posx][posy] = mow + " " + iam;
-                                        posia[posx][posy+1]= mow + " " + iam;
-                                        posia[posx][posy+2]= mow + " " + iam;
-                                        posia[posx][posy+3]= mow + " " + iam;
-                                        posia[posx][posy+4]= mow + " " + iam;
-                                    } 
-                                }
-                                iam = iam-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            posia[posx][posy] = mow + " " + iam;
+                                            posia[posx][posy+1]= mow + " " + iam;
+                                            posia[posx][posy+2]= mow + " " + iam;
+                                            posia[posx][posy+3]= mow + " " + iam;
+                                            posia[posx][posy+4]= mow + " " + iam;
+                                        } 
+                                    }
+                                    iam = iam-1;
+                                    posok = 1;
                                 }
                             }
                             
@@ -1009,53 +1009,53 @@ public class IArrr {
 
                             if(direcao == 0 && posx <=7){
                                 if(poshumano[posx][posy]==agua && poshumano[posx+1][posy]==agua && poshumano[posx+2][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        poshumano[posx][posy] = fragata + " " + f;
-                                        poshumano[posx+1][posy]= fragata + " " + f;
-                                        poshumano[posx+2][posy]= fragata + " " + f;
-                                    } 
-                                }
-                                f = f-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            poshumano[posx][posy] = fragata + " " + f;
+                                            poshumano[posx+1][posy]= fragata + " " + f;
+                                            poshumano[posx+2][posy]= fragata + " " + f;
+                                        } 
+                                    }
+                                    f = f-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 1 && posx >=2){ 
                                 if(poshumano[posx][posy]==agua && poshumano[posx-1][posy]==agua && poshumano[posx-2][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        poshumano[posx][posy] = fragata + " " + f;
-                                        poshumano[posx-1][posy]= fragata + " " + f;
-                                        poshumano[posx-2][posy]= fragata + " " + f;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            poshumano[posx][posy] = fragata + " " + f;
+                                            poshumano[posx-1][posy]= fragata + " " + f;
+                                            poshumano[posx-2][posy]= fragata + " " + f;
 
-                                    } 
-                                }
-                                f = f-1;
-                                posok = 1;
+                                        } 
+                                    }
+                                    f = f-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 2 && posy >=2){ 
                                 if(poshumano[posx][posy]==agua && poshumano[posx][posy-1]==agua && poshumano[posx][posy-2] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        poshumano[posx][posy] = fragata + " " + f;
-                                        poshumano[posx][posy-1]= fragata + " " + f;
-                                        poshumano[posx][posy-2]= fragata + " " + f;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            poshumano[posx][posy] = fragata + " " + f;
+                                            poshumano[posx][posy-1]= fragata + " " + f;
+                                            poshumano[posx][posy-2]= fragata + " " + f;
 
-                                    } 
-                                }
-                                f = f-1;
-                                posok = 1;
+                                        } 
+                                    }
+                                    f = f-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 3 && posy <=7){ 
                                 if(poshumano[posx][posy]==agua && poshumano[posx][posy+1]==agua && poshumano[posx][posy+2] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        poshumano[posx][posy] = fragata + " " + f;
-                                        poshumano[posx][posy+1]= fragata + " " + f;
-                                        poshumano[posx][posy+2]= fragata + " " + f;
-                                    } 
-                                }
-                                f = f-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            poshumano[posx][posy] = fragata + " " + f;
+                                            poshumano[posx][posy+1]= fragata + " " + f;
+                                            poshumano[posx][posy+2]= fragata + " " + f;
+                                        } 
+                                    }
+                                    f = f-1;
+                                    posok = 1;
                                 }
                             }else{
                                 poshumano[posx][posy] = poshumano[posx][posy];
@@ -1314,60 +1314,60 @@ public class IArrr {
 
                             if(direcao == 0 && posx <=5){ 
                                 if(poshumano[posx][posy]==agua && poshumano[posx+1][posy]==agua && poshumano[posx+2][posy] == agua && poshumano[posx+3][posy] == agua && poshumano[posx+4][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        poshumano[posx][posy] = mow + " " + m;
-                                        poshumano[posx+1][posy]= mow + " " + m;
-                                        poshumano[posx+2][posy]= mow + " " + m;
-                                        poshumano[posx+3][posy]= mow + " " + m;
-                                        poshumano[posx+4][posy]= mow + " " + m;
-                                    } 
-                                }
-                                m = m-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            poshumano[posx][posy] = mow + " " + m;
+                                            poshumano[posx+1][posy]= mow + " " + m;
+                                            poshumano[posx+2][posy]= mow + " " + m;
+                                            poshumano[posx+3][posy]= mow + " " + m;
+                                            poshumano[posx+4][posy]= mow + " " + m;
+                                        } 
+                                    }
+                                    m = m-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 1 && posx >= 4){ 
                                 if(poshumano[posx][posy]==agua && poshumano[posx-1][posy]==agua && poshumano[posx-2][posy] == agua && poshumano[posx-3][posy] == agua && poshumano[posx-4][posy] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        poshumano[posx][posy] = mow + " " + m;
-                                        poshumano[posx-1][posy]= mow + " " + m;
-                                        poshumano[posx-2][posy]= mow + " " + m;
-                                        poshumano[posx-3][posy]= mow + " " + m;
-                                        poshumano[posx-4][posy]= mow + " " + m;
-                                    } 
-                                }
-                                m = m-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            poshumano[posx][posy] = mow + " " + m;
+                                            poshumano[posx-1][posy]= mow + " " + m;
+                                            poshumano[posx-2][posy]= mow + " " + m;
+                                            poshumano[posx-3][posy]= mow + " " + m;
+                                            poshumano[posx-4][posy]= mow + " " + m;
+                                        } 
+                                    }
+                                    m = m-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 2 && posy >= 4){ 
                                 if(poshumano[posx][posy]==agua && poshumano[posx][posy-1]==agua && poshumano[posx][posy-2] == agua && poshumano[posx][posy-3] == agua && poshumano[posx][posy-4] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        poshumano[posx][posy] = mow + " " + m;
-                                        poshumano[posx][posy-1]= mow + " " + m;
-                                        poshumano[posx][posy-2]= mow + " " + m;
-                                        poshumano[posx][posy-3]= mow + " " + m;
-                                        poshumano[posx][posy-4]= mow + " " + m;
-                                    } 
-                                }
-                                m = m-1;
-                                posok = 1;
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            poshumano[posx][posy] = mow + " " + m;
+                                            poshumano[posx][posy-1]= mow + " " + m;
+                                            poshumano[posx][posy-2]= mow + " " + m;
+                                            poshumano[posx][posy-3]= mow + " " + m;
+                                            poshumano[posx][posy-4]= mow + " " + m;
+                                        } 
+                                    }
+                                    m = m-1;
+                                    posok = 1;
                                 }
                             }else if(direcao == 3 && posy <=5){ 
                                 if(poshumano[posx][posy]==agua && poshumano[posx][posy+1]==agua && poshumano[posx][posy+2] == agua && poshumano[posx][posy+3] == agua && poshumano[posx][posy+4] == agua){
-                                for (y=0;y<10;y++){
-                                    for (x=0;x<10;x++){
-                                        poshumano[posx][posy] = mow + " " + m;
-                                        poshumano[posx][posy+1]= mow + " " + m;
-                                        poshumano[posx][posy+2]= mow + " " + m;
-                                        poshumano[posx][posy+3]= mow + " " + m;
-                                        poshumano[posx][posy+4]= mow + " " + m;
-                                    } 
-                                }
-                                m = m-1;
-                                posok = 1;
-                                }
+                                    for (y=0;y<10;y++){
+                                        for (x=0;x<10;x++){
+                                            poshumano[posx][posy] = mow + " " + m;
+                                            poshumano[posx][posy+1]= mow + " " + m;
+                                            poshumano[posx][posy+2]= mow + " " + m;
+                                            poshumano[posx][posy+3]= mow + " " + m;
+                                            poshumano[posx][posy+4]= mow + " " + m;
+                                        } 
+                                    }
+                                    m = m-1;
+                                    posok = 1;
+                                    }
                             }else{
                                 poshumano[posx][posy] = poshumano[posx][posy];
                             }                         
