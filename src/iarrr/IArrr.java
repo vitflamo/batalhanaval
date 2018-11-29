@@ -95,7 +95,8 @@ public class IArrr {
             "William Kidd",
             "Jack Rackram",
             "Anne Bonny",
-            "Holandês Voador"
+            "Holandês Voador",
+            "Monkey D. Luffy"
         };
         
         //Nome das localidades
@@ -139,7 +140,8 @@ public class IArrr {
         //rendição
         String[] rendicao = {
             "Continuar",
-            "Desistir"
+            "Desistir",
+            "Finalizar"
         };
             
         //JOGO------------------------------------------------------------------
@@ -1454,7 +1456,7 @@ public class IArrr {
                         + "\n\n Onde deseja atirar, capitão?\n"
                         +  "\n\n Atenção! INSIRA A COLUNA (LETRA) E DEPOIS A LINHA (NUMERO) \n"
                     ),
-                    "VEZ DE: " +  humano, 
+                    "VEZ DE: " +  humano + ", NAVIOS RESTANTES: " + conthumano, 
                     JOptionPane.PLAIN_MESSAGE
                 );
 
@@ -1503,8 +1505,8 @@ public class IArrr {
                             break;
                     }
                     //pega o resto da string
-                    posy = Integer.parseInt(pos.substring(1));
-                    posy = posy - 1;
+                    rasy = Integer.parseInt(ras.substring(1));
+                    rasy = rasy - 1;
                 }
   
                 //O QUE O HUMANO ACERTOU----------------------------------------
@@ -1522,15 +1524,32 @@ public class IArrr {
                         rendicao[0]
                     );
 
-                    if(rend==1){
-                        conthumano=0;
-                    }
-
                     posia[rasx][rasy] = tiroagua ;
                     System.out.println("RÁ! Tiro na água!");
 
                     rashumano[rasx][rasy] = tiroagua;
 
+                    
+                    if(rend==1){
+                        conthumano=0;
+                        jogadaok=1;
+                    }else if(rend==2){
+                        
+                        if(conthumano>contia){
+                            contia=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else if(contia>conthumano){
+                            conthumano=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else{
+                        combate=1;
+                        jogadaok=1;
+                        }
+                    }
+
+                    
                 //ILHA
                 }else if(posia[rasx][rasy]==ilha){
 
@@ -1547,7 +1566,22 @@ public class IArrr {
 
                     if(rend==1){
                         conthumano=0;
+                        jogadaok=1;
+                    }else if(rend==2){
+                        
+                        if(conthumano>contia){
+                            contia=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else if(contia>conthumano){
+                            conthumano=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else{
+                        combate=1;
+                        jogadaok=1;
                     }
+                    }//fim das opções de rendição
 
                    System.out.println("Acertando as ilhas!? Está cego?");
 
@@ -1567,7 +1601,22 @@ public class IArrr {
 
                     if(rend==1){
                         conthumano=0;
+                        jogadaok=1;
+                    }else if(rend==2){
+                        
+                        if(conthumano>contia){
+                            contia=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else if(contia>conthumano){
+                            conthumano=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else{
+                        combate=1;
+                        jogadaok=1;
                     }
+                    }//fim das opções de rendição
 
                    System.out.println("Isso não faz sentido!");
 
@@ -1586,15 +1635,30 @@ public class IArrr {
                         rendicao[0]
                     );
 
-                    if(rend==1){
-                        conthumano=0;
-                    }
-
                     System.out.println("Grrrr! acertou " + posia[rasx][rasy]);
 
                     contia = contia-1;
                     rashumano[rasx][rasy] = posia[rasx][rasy];
                     posia[rasx][rasy] = acerto ;
+                    
+                    if(rend==1){
+                        conthumano=0;
+                        jogadaok=1;
+                    }else if(rend==2){
+                        if(conthumano>contia){
+                            contia=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else if(contia>conthumano){
+                            conthumano=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else{
+                        combate=1;
+                        jogadaok=1;
+                    }
+                    }//fim das opções de rendição
+
                 } 
   
                 //JOGADA DA IA -------------------------------------------------
@@ -1603,7 +1667,8 @@ public class IArrr {
                     rasx = rand.nextInt(9);
                     rasy = rand.nextInt(9);
 
-                    System.out.println("Escolhi a posição inicial: [" + conversor[rasx] + "][" +(rasy+1) + "]");
+                    System.out.println("Escolhi a posição inicial: [" + conversor[rasx] + (rasy+1) + "]");
+                    System.out.println("Navios Restantes: [" + contia + "]");
 
                     //AGUA
                     if(poshumano[rasx][rasy]==agua){
@@ -1703,6 +1768,11 @@ public class IArrr {
                 JOptionPane.showMessageDialog(
                     null,
                     "O VENCEDOR É " + humano
+                );
+            }else{
+                JOptionPane.showMessageDialog(
+                    null,
+                    "OCORREU UM EMPATE"
                 );
             }
             
