@@ -6,15 +6,15 @@ import java.util.Random;
 
 /*TRABALHO DE IA
 
-IArrr - Inteligência Artificial Pirata
+    IArrr - Inteligência Artificial Pirata
 
-Professor - Edson Ceroni
+    Professor - Edson Ceroni
 
-Grupo:
-@author Caio Henrique Barbosa
-@author Leandro Torres Batista
-@author Mariana Benigno Salvini
-@author Vitor Francisco Lamounier
+    Grupo:
+        @author Caio Henrique Barbosa
+        @author Leandro Torres Batista
+        @author Mariana Benigno Salvini
+        @author Vitor Francisco Lamounier
 
 */
 
@@ -35,11 +35,12 @@ public class IArrr {
         String agua = "~~~~~";
         String tiroagua = "XXXXX";
         String acerto = "+++++";
-        String mow = "MOW";
-        String brigue = "BRIG";
         
+        String mow = "MOW";
+        String brigue = "BRIG";        
         String fragata = "FRAG";
         String escuna = "ESCU";
+        
         String ilha = "ILHAS";
 
         //MAPAS-----------------------------------------------------------------
@@ -112,7 +113,7 @@ public class IArrr {
             "Fragata",
             "Brigue",
             "Man-of-War",
-            "Deixar a IA posicionar meus navios"
+            "Deixar a IA posicionar"
         };
 
         //Direções para o posicionamento
@@ -121,6 +122,7 @@ public class IArrr {
             "Oeste (Esquerda)",
             "Norte (Cima)",
             "Sul (Baixo)",
+            "Cancelar"
         };
 
         //tranforma o x de 0 a 9 em letras
@@ -150,22 +152,24 @@ public class IArrr {
             //Apresentação
             JOptionPane.showMessageDialog(
                 null, 
-                "Bem Vindo, Capitão! Sou o Oficial JP (Joptiono Panelson)! Temos uma missão para você!\n"
+                "JP: Seja Bem-Vindo, Capitão!"
+                + "\nSou o Oficial JP (Joptiono Panelson)! "
+                + "\nTemos uma missão para você!\n"
             );
             
             //Nome do Jogador
             String humano = JOptionPane.showInputDialog(
                 null,
-                "Primeiramente, por qual nome podemos chama-lo, Capitão?"
+                "JP: Primeiramente, como podemos te chamar?"
             );
-
+            
             //Contexto
             JOptionPane.showMessageDialog(
                 null, 
-                " Certo Capitão " + humano + ", voltando a missão:"
-                + "\nEsses ratos andaram saqueando nossas embarcações durante esse mês"
-                + "\nArmamos uma emboscada para pegar apenas um dos piratas e seu bando"
-                + "\nÉ nosso dever como a marinha capturar os piratas!"
+                "JP: Certo Capitão " + humano + ", voltando a missão:"
+                + "\nEsses piratas andaram saqueando portos, marinheiros e civis!"
+                + "\nEstamos planejando uma emboscada para pegar um dos piratas e seu bando"
+                + "\nÉ nosso dever como a marinha capturar piratas, espero que esteja pronto!"
             );
            
             System.out.print("\nIArrr: O Humano que tentará me capturar se chama " + humano);
@@ -182,26 +186,25 @@ public class IArrr {
                 pirata[0]
             );
             
-            System.out.print(pirata[ia] + ": Meu nome de pirata será " + pirata[ia]);
+            System.out.print("IArrr: Meu nome de pirata será " + pirata[ia]);
             
             //Confirmação do nome do Jogador e IA
             JOptionPane.showMessageDialog(
                 null,
-                "Certo Cap. " + humano + " iremos caçar "+  pirata[ia] + "!"
+                "JP: Entendido! Iremos caçar "+  pirata[ia] + "!"
             );
             
             //Preenche o mapa de posicionamento com ~ para simbolizar o mar
             for (y=0;y<10;y++){
                 for (x=0;x<10;x++){
-                    poshumano[x][y]= agua;
-                    posia[x][y]= agua;
+                    poshumano[x][y] = agua;
                 }
             }
 
             //Escolha do local
             int local = JOptionPane.showOptionDialog(
                 null,
-                "Onde iremos montar nossa emboscada?\n",
+                "JP: Onde iremos montar nossa emboscada?\n",
                 "Confirmação",
                 JOptionPane.WARNING_MESSAGE,
                 0,
@@ -210,7 +213,7 @@ public class IArrr {
                 localidade[0]
             );
 
-            System.out.print(pirata[ia] + ": Estarei viajando por " + localidade[local]);
+            System.out.print(pirata[ia] + ": Meu proximo alvo será " + localidade[local]);
             
             //Adicionando as ilhas
             switch (local) {
@@ -409,7 +412,7 @@ public class IArrr {
                     //navio q a ia vai posicionar
                     int navio = rand.nextInt(4) + 0;
 
-                    System.out.println("\nEscolhi o navio: " + navios[navio] + "\n"); 
+                    System.out.println(pirata[ia] +  ": Escolhi posicionar " + navios[navio] + "\n"); 
 
                     ///ESCUNAS--------------------------------------------------
                     if (navio == 0 && iae>0){
@@ -423,11 +426,11 @@ public class IArrr {
                             posx = rand.nextInt(9);
                             posy = rand.nextInt(9);
 
-                            System.out.println("Escolhi a posição inicial: [" + conversor[posx] + (posy+1) + "]");
+                            System.out.println(pirata[ia] +  ": Escolhi a posição inicial: [" + conversor[posx] + (posy+1) + "]\n");
 
                             //Direção que a IA vai querer
                             int direcao = rand.nextInt(4);
-                            System.out.println("Escolhi a direção: " + direcoes[direcao]);
+                            System.out.println(pirata[ia] +  ": Direcionei ele para o " + direcoes[direcao] + "\n");
 
                             if(direcao == 0 && posx <=8){
                                 if(posia[posx][posy]==agua && posia[posx+1][posy]==agua){
@@ -473,8 +476,6 @@ public class IArrr {
                                     iae = iae-1;
                                     posok = 1;
                                 }
-                            }else{
-                                posia[posx][posy] = agua;
                             }
                             
                             //ultimo navio?
@@ -495,11 +496,11 @@ public class IArrr {
                             posx = rand.nextInt(9);
                             posy = rand.nextInt(9);
 
-                            System.out.println("Escolhi a posição inicial: [" + conversor[posx] + (posy+1) + "]");
+                            System.out.println(pirata[ia] +  ": Escolhi a posição inicial: [" + conversor[posx] + (posy+1) + "]");
 
                             //Direção que a IA vai querer
                             int direcao = rand.nextInt(4);
-                            System.out.println("Escolhi a direção: " + direcoes[direcao]);
+                            System.out.println(pirata[ia] +  ": Direcionei ele para o " + direcoes[direcao] + "\n");
 
                             if(direcao == 0 && posx <=7){
                                 if(posia[posx][posy]==agua && posia[posx+1][posy]==agua && posia[posx+2][posy] == agua){
@@ -572,11 +573,11 @@ public class IArrr {
                             posx = rand.nextInt(9);
                             posy = rand.nextInt(9);
 
-                            System.out.println("Escolhi a posição inicial: [" + conversor[posx] + (posy+1) + "]");
+                            System.out.println(pirata[ia] + ": Escolhi a posição inicial: [" + conversor[posx] + (posy+1) + "]");
 
                             //Direção que a IA vai querer
                             int direcao = rand.nextInt(4);
-                            System.out.println("Escolhi a direção: " + direcoes[direcao]);
+                            System.out.println(pirata[ia] +  ": Direcionei ele para o " + direcoes[direcao] + "\n");
 
                             if(direcao == 0 && posx <=6){ 
                                 if(posia[posx][posy]==agua && posia[posx+1][posy]==agua && posia[posx+2][posy] == agua && posia[posx+3][posy] == agua){
@@ -652,11 +653,11 @@ public class IArrr {
                             posx = rand.nextInt(9);
                             posy = rand.nextInt(9);
 
-                            System.out.println("Escolhi a posição inicial: [" + conversor[posx] + (posy+1) + "]");
+                            System.out.println(pirata[ia] + ": Escolhi a posição inicial: [" + conversor[posx] + (posy+1) + "]");
 
                             //Direção que a IA vai querer
                             int direcao = rand.nextInt(4);
-                            System.out.println("Escolhi a direção: " + direcoes[direcao]);
+                            System.out.println(pirata[ia] +  ": Direcionei ele para o " + direcoes[direcao] + "\n");
 
                             if(direcao == 0 && posx <=5){ 
                                 if(posia[posx][posy]==agua && posia[posx+1][posy]==agua && posia[posx+2][posy] == agua && posia[posx+3][posy] == agua && posia[posx+4][posy] == agua){
@@ -739,9 +740,19 @@ public class IArrr {
                 
                 System.out.println("\n" + humano + ", tente me pegar!\n");
                 
+                //TUORIAL POSICIONAMENTO
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Cada conjunto de letra e coluna é chamado de ESPAÇO, Ex: A8, B2, C5"
+                        + "\nPrimeiro você escolhe uma posição inicial e então a orientação que o navio estará"
+                        + "\nSe escolher que a IA posicione seus navios, ela também irá reposicionar qualquer um que tenha posicionado anteriormente"
+                    );
+                
                 //PARTE DO HUMANO-----------------------------------------------
                 while (humanook==0){
                         
+                    
+                    
                     //Cria o mapa de posicionamento para o humano
                     String mapaposhumano = "\tA\tB\tC\tD\tE\tF\tG\tH\tI\tJ\tK\n" + 1;
 
@@ -751,27 +762,28 @@ public class IArrr {
                         }
                         mapaposhumano = mapaposhumano + "\n" + (y+2);
                     }
-
+                    
                     //ESCOLHA DO NAVIO------------------------------------------
                     int navio = JOptionPane.showOptionDialog(
                         null,
                         new JTextArea(
-                            "Esta é a área que temos disponível:\n\n" + mapaposhumano 
-                            + "\n\n E ainda temos que posicionar:\n"
-                            + e + " escunas (2 Blocos)\n"
-                            + f + " fragatas (3 Blocos)\n"
-                            + b + " brigues (4 Blocos)\n"
-                            + m + " Man-of-War (5 Blocos)\n"
-                            + "\nQual navio deseja posicionar, Cpt." + humano + "?"
+                            "JP: Esta é a área que temos disponível\n\n" + mapaposhumano 
+                            + "\n\nAinda temos que posicionar " + (e+f+b+m) + " navios, sendo eles:\n"
+                            + e + " escunas (Ocupa 2 espaços)\n"
+                            + f + " fragatas (Ocupa 3 espaços)\n"
+                            + b + " brigues (Ocupa 4 espaços)\n"
+                            + m + " Man-of-War (Ocupa 5 espaços)\n"
+                            + "\nQual navio deseja posicionar, Capitão " + humano + "?"
                         ),
-                        "Vez de " + humano + " - Escolha do navio",
+                        "Vez de " + humano + " - Escolha do navio. Espaços ainda a serem preenchidos: " + (e+f+b+m),
                         JOptionPane.PLAIN_MESSAGE,
                         0,
                         null,
                         navios,
                         navios[0]
                     );
-
+                    
+                    
                     //ESCUNA----------------------------------------------------
                     if (navio == 0 && e>0){
                         posok=0;
@@ -787,7 +799,7 @@ public class IArrr {
                                     + "\n\n Insira a posição inicial:\n"
                                     +  "\n\n Atenção! INSIRA A COLUNA (LETRA) E DEPOIS A LINHA (NUMERO) \n"
                                 ),
-                                "Posicionando Navio: " + navios[navio] + " (2 Blocos)", 
+                                "Posicionando Navio: " + navios[navio] + " (2 espaços)", 
                                 JOptionPane.PLAIN_MESSAGE
                             );
 
@@ -852,10 +864,10 @@ public class IArrr {
                             int direcao = JOptionPane.showOptionDialog(
                                 null,
                                 new JTextArea(
-                                    "Esta é a área que temos disponível:\n\n" + mapaposhumano 
+                                    "JP: Esta é a área que temos disponível\n\n" + mapaposhumano 
                                     + "\n\n Escolha a Direção do navio:\n"
                                     ),
-                                "Escolha da direcao",
+                                "Posição Inicial: ["+ pos +"]",
                                 JOptionPane.PLAIN_MESSAGE,
                                 0,
                                 null,
@@ -907,8 +919,6 @@ public class IArrr {
                                     e = e-1;
                                     posok = 1;
                                 }
-                            }else{
-                                poshumano[posx][posy] = poshumano[posx][posy];
                             }
                             
                             //ultimo navio?
@@ -933,7 +943,7 @@ public class IArrr {
                                     + "\n\n Insira a posição inicial:\n"
                                     +  "\n\n Atenção! INSIRA A COLUNA (LETRA) E DEPOIS A LINHA (NUMERO) \n"
                                 ),
-                                "Posicionando Navio: " + navios[navio] + " (3 Blocos)", 
+                                "Posicionando Navio: " + navios[navio] + " (3 espaços)", 
                                 JOptionPane.PLAIN_MESSAGE
                             );
 
@@ -998,10 +1008,10 @@ public class IArrr {
                             int direcao = JOptionPane.showOptionDialog(
                                 null,
                                 new JTextArea(
-                                    "Esta é a área que temos disponível:\n\n" + mapaposhumano 
+                                    "JP: Esta é a área que temos disponível\n\n" + mapaposhumano 
                                     + "\n\n Escolha a Direção do navio:\n"
                                     ),
-                                "Escolha da direcao",
+                                "Posição Inicial: ["+ (posa) + (pos+1)+"]",
                                 JOptionPane.PLAIN_MESSAGE,
                                 0,
                                 null,
@@ -1083,7 +1093,7 @@ public class IArrr {
                                     + "\n\n Insira a posição inicial:\n"
                                     +  "\n\n Atenção! INSIRA A COLUNA (LETRA) E DEPOIS A LINHA (NUMERO) \n"
                                 ),
-                                "Posicionando Navio: " + navios[navio] + " (4 Blocos)", 
+                                "Posicionando Navio: " + navios[navio] + " (4 espaços)", 
                                 JOptionPane.PLAIN_MESSAGE
                             );
 
@@ -1148,10 +1158,10 @@ public class IArrr {
                             int direcao = JOptionPane.showOptionDialog(
                                 null,
                                 new JTextArea(
-                                    "Esta é a área que temos disponível:\n\n" + mapaposhumano 
+                                    "JP: Esta é a área que temos disponível\n\n" + mapaposhumano 
                                     + "\n\n Escolha a Direção do navio:\n"
                                     ),
-                                "Escolha da direcao",
+                                "Posição Inicial: ["+ pos +"]",
                                 JOptionPane.PLAIN_MESSAGE,
                                 0,
                                 null,
@@ -1213,9 +1223,8 @@ public class IArrr {
                                 b = b-1;
                                 posok = 1;
                                 }
-                            }else{
-                                poshumano[posx][posy] = poshumano[posx][posy];
                             }
+                            
                             //ultimo navio?
                             if(e==0 && f==0 && b==0 && m==0){
                                 humanook = 1;
@@ -1238,7 +1247,7 @@ public class IArrr {
                                     + "\n\n Insira a posição inicial:\n"
                                     +  "\n\n Atenção! INSIRA A COLUNA (LETRA) E DEPOIS A LINHA (NUMERO) \n"
                                 ),
-                                "Posicionando Navio: " + navios[navio] + " (5 Blocos)", 
+                                "Posicionando Navio: " + navios[navio] + " (5 espaços)", 
                                 JOptionPane.PLAIN_MESSAGE
                             );
                             
@@ -1303,10 +1312,10 @@ public class IArrr {
                             int direcao = JOptionPane.showOptionDialog(
                                 null,
                                 new JTextArea(
-                                    "Esta é a área que temos disponível:\n\n" + mapaposhumano 
+                                    "JP: Esta é a área que temos disponível\n\n" + mapaposhumano 
                                     + "\n\n Escolha a Direção do navio:\n"
                                     ),
-                                "Escolha da direcao",
+                                "Posição Inicial: ["+ pos +"]",
                                 JOptionPane.PLAIN_MESSAGE,
                                 0,
                                 null,
@@ -1370,9 +1379,7 @@ public class IArrr {
                                     m = m-1;
                                     posok = 1;
                                     }
-                            }else{
-                                poshumano[posx][posy] = poshumano[posx][posy];
-                            }                         
+                            }                      
                             //ultimo navio?
                             if(e==0 && f==0 && b==0 && m==0){
                                 humanook = 1;
@@ -1382,7 +1389,7 @@ public class IArrr {
                     //IA POSICIONA O DO HUMANO----------------------------------
                     }else if(navio==4){
 
-                        System.out.println("Seu preguiçoso!");
+                        System.out.println(pirata[ia] + ": Seu preguiçoso!");
                         
                         //ia passa o posicionamento dela pro humano
                         for (y=0;y<10;y++){
@@ -1421,8 +1428,8 @@ public class IArrr {
             //INTERSEÇÃO
             JOptionPane.showMessageDialog(
                 null,
-                "OK, Todos os navios estão prontos!\n"
-                + "Atacaremos ao anoitecer!"
+                "JP: OK, Todos os navios estão prontos!\n"
+                + "Agora é só esperar " + pirata[ia] + " aparecer!"
             );
             
             jogo = 0;
@@ -1451,12 +1458,13 @@ public class IArrr {
                 ras = JOptionPane.showInputDialog(
                     null,
                     new JTextArea(
-                        "Este é nosso posicionamento:\n\n" + mapaposhumano 
+                        "JP: Este é nosso posicionamento:\n\n" + mapaposhumano 
                         + "\n\n Este é nosso rastreamento:\n" + maparashumano    
                         + "\n\n Onde deseja atirar, capitão?\n"
                         +  "\n\n Atenção! INSIRA A COLUNA (LETRA) E DEPOIS A LINHA (NUMERO) \n"
                     ),
-                    "VEZ DE: " +  humano + ", NAVIOS RESTANTES: " + conthumano, 
+                    "PLACAR (ESPAÇOS RESTANTES) - Capitão " +  humano + ": " + conthumano + " | " 
+                    + pirata[ia] + ": " +  contia, 
                     JOptionPane.PLAIN_MESSAGE
                 );
 
@@ -1515,8 +1523,8 @@ public class IArrr {
                     
                     int rend = JOptionPane.showOptionDialog(
                         null,
-                        "Não acertamos, capitão!",
-                        "Detecção de Acerto",
+                        "JP: Acertamos a água, capitão!",
+                        "Tiro na água",
                         JOptionPane.PLAIN_MESSAGE,
                         0,
                         null,
@@ -1524,11 +1532,9 @@ public class IArrr {
                         rendicao[0]
                     );
 
-                    posia[rasx][rasy] = tiroagua ;
-                    System.out.println("RÁ! Tiro na água!");
-
+                    posia[rasx][rasy] = tiroagua;
                     rashumano[rasx][rasy] = tiroagua;
-
+                    System.out.println("RÁ! Tiro na água!");
                     
                     if(rend==1){
                         conthumano=0;
@@ -1555,8 +1561,8 @@ public class IArrr {
 
                     int rend = JOptionPane.showOptionDialog(
                         null,
-                        "Acertamos parte do terreno!",
-                        "Detecção de Acerto",
+                        "JP: Acertamos a ilha!",
+                        "Tiro na ilha",
                         JOptionPane.PLAIN_MESSAGE,
                         0,
                         null,
@@ -1586,12 +1592,12 @@ public class IArrr {
                    System.out.println("Acertando as ilhas!? Está cego?");
 
                 //NAVIO QUE JA TINHA SIDO ACERTADO
-                }else if(posia[rasx][rasy]==acerto || poshumano[rasx][rasy] == tiroagua){
+                }else if(posia[rasx][rasy]==acerto){
                     
                     int rend = JOptionPane.showOptionDialog(
                         null,
-                        "Você já atirou aí, capitão!",
-                        "Detecção de Acerto",
+                        "JP: Você já acertou este navio, capitão!",
+                        "Tiro repetido",
                         JOptionPane.PLAIN_MESSAGE,
                         0,
                         null,
@@ -1618,14 +1624,48 @@ public class IArrr {
                     }
                     }//fim das opções de rendição
 
-                   System.out.println("Isso não faz sentido!");
+                   System.out.println("Memória fraca?!");
 
                 //NUMA EMBARCAÇÃO VÁLIDA
+                }else if (posia[rasx][rasy] == tiroagua){
+            
+                    int rend = JOptionPane.showOptionDialog(
+                        null,
+                        "JP: Você já acertou a água aí, capitão!",
+                        "Tiro repetido",
+                        JOptionPane.PLAIN_MESSAGE,
+                        0,
+                        null,
+                        rendicao,
+                        rendicao[0]
+                    );
+
+                    if(rend==1){
+                        conthumano=0;
+                        jogadaok=1;
+                    }else if(rend==2){
+                        
+                        if(conthumano>contia){
+                            contia=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else if(contia>conthumano){
+                            conthumano=0;
+                            jogadaok=1;
+                            combate=1;
+                        }else{
+                        combate=1;
+                        jogadaok=1;
+                    }
+                    }//fim das opções de rendição
+
+                   System.out.println("Memória fraca?!");
+                   
                 }else{
                     
                     int rend = JOptionPane.showOptionDialog(
                         null,
-                        "Boa Capitão " + humano 
+                        "JP: Boa Capitão " + humano 
                         + "\nAcertou o " + posia[rasx][rasy],
                         "Detecção de Acerto",
                         JOptionPane.PLAIN_MESSAGE,
@@ -1656,7 +1696,7 @@ public class IArrr {
                         }else{
                         combate=1;
                         jogadaok=1;
-                    }
+                        }
                     }//fim das opções de rendição
 
                 } 
@@ -1675,7 +1715,7 @@ public class IArrr {
 
                         JOptionPane.showMessageDialog(
                             null,
-                            pirata[ia] + " Errou o tiro Capitão! [" + conversor[rasx] + "][" +(rasy+1) + "]"
+                            "JP:" + pirata[ia] + " Errou o tiro Capitão! [" + conversor[rasx] + (rasy+1) + "]"
                         );
 
                         rasia[rasx][rasy] = tiroagua ;
@@ -1700,7 +1740,8 @@ public class IArrr {
 
                         JOptionPane.showMessageDialog(
                             null,
-                            pirata[ia] + " atingiu " + poshumano[rasx][rasy]
+                            "JP: " + pirata[ia] + " atingiu " + poshumano[rasx][rasy]
+                            + " na posicão [" + conversor[rasx] + (rasy+1) + "]"
                         );
 
                         conthumano = conthumano-1;
@@ -1740,7 +1781,7 @@ public class IArrr {
                 if(contia==0){
                     JOptionPane.showMessageDialog(
                         null,
-                        "Vencemos!!!\nCapturamos " + pirata[ia]
+                        "JP: Afundamos todos os navios!\nCapturamos " + pirata[ia]
                     );
                     
                     combate=1;
@@ -1748,10 +1789,10 @@ public class IArrr {
                 }else if (conthumano==0){
                     JOptionPane.showMessageDialog(
                         null,
-                        "Recuar! Recuar!"
+                        "JP: Recuar! Recuar!"
                     );
 
-                    System.out.println("IArrr: HAHAHA!\nNUNCA ME PEGARÃO VIVO!");
+                    System.out.println("IArrr: HAHAHA!\nNUNCA ME PEGARÃO!");
                     combate=1;
                 }else{
                     jogadaok=0;
